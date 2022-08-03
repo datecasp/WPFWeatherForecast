@@ -1,4 +1,4 @@
-﻿****WARINING THIS REPO IS WIP****
+﻿****WARNING THIS REPO IS WIP****
 
 This repo shows how to connect an API from a WPF desktop app.
 
