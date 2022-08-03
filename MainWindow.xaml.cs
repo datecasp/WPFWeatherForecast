@@ -62,21 +62,14 @@ namespace WPFWeatherForecast
                 try
                 {
                     //Define method to connect to the API with async try-catch
-                    //URL http://api.openweathermap.org/data/2.5/forecast?q=london&appid=635663c9844750b71b316bc7593ac186
+                    //URL http://api.openweathermap.org/data/2.5/forecast?q=london&appid= API ID HERE
                     HttpClient client = new HttpClient();
                     client.BaseAddress = new Uri("http://api.openweathermap.org/data/2.5/");
                     client.DefaultRequestHeaders.Accept.Clear();
-                    var query = $"forecast?q={city}&appid=API ID KEY HERE";
+                    var query = $"forecast?q={city}&appid=API ID HERE";
                     var response = client.GetAsync(query).Result;
                     var strResponse = response.Content.ReadAsStringAsync().Result;
-                    /*
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://api.openweathermap.org/data/2.5/forecast?q=london&appid=635663c9844750b71b316bc7593ac186");
-                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                     
-                    Stream stream = response.RequestMessage as Stream;
-                    StreamReader sr = new StreamReader(stream);
-                    string line = sr.ReadToEnd();
-                    */
                     txtResponse.Text = strResponse;
                     LayoutIntro.Visibility = Visibility.Hidden;
                     GridForecast.Visibility = Visibility.Visible;
