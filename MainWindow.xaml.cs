@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,9 +24,12 @@ namespace WPFWeatherForecast
     public partial class MainWindow : Window
     {
         string city;
+        private static HttpClient Client = new HttpClient();
+
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         /*
@@ -53,8 +59,36 @@ namespace WPFWeatherForecast
             }
             else
             {
-                //Define method to connect to the API with async try-catch
+                try
+                {
+                    //Define method to connect to the API with async try-catch
+                    //URL http://api.openweathermap.org/data/2.5/forecast?q=london&appid=635663c9844750b71b316bc7593ac186
+                    HttpClient client = new HttpClient();
+                    client.BaseAddress = new Uri("http://api.openweathermap.org/data/2.5/");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    var query = $"forecast?q={city}&appid=API ID KEY HERE";
+                    var response = client.GetAsync(query).Result;
+                    var strResponse = response.Content.ReadAsStringAsync().Result;
+                    /*
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://api.openweathermap.org/data/2.5/forecast?q=london&appid=635663c9844750b71b316bc7593ac186");
+                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                    
+                    Stream stream = response.RequestMessage as Stream;
+                    StreamReader sr = new StreamReader(stream);
+                    string line = sr.ReadToEnd();
+                    */
+                    txtResponse.Text = strResponse;
+                    LayoutIntro.Visibility = Visibility.Hidden;
+                    GridForecast.Visibility = Visibility.Visible;
+                }
+                catch(Exception ex)
+                {
+                    txtResponse.Text = ex.Message;
+                }
             }
         }
+
+
+        
     }
 }
