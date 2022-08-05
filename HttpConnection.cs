@@ -11,10 +11,10 @@ namespace WPFWeatherForecast
     public static class HttpConnection
     {
         /*
-         *  This Class only has one static method to manage the HTTP connection to the API
-         *  Receives "city" as a parameter to add to the query
-         *  uses a constant defined in other class for the API key 
-         *  for security reasons
+         *  This Class only has one static method to manage the HTTP connection to the API.
+         *  Receives "city" as a parameter to add to the query.
+         *  I use a constant string defined in other class for the API key 
+         *  for security reasons.
          *  In order to use it you must create this class Constant.cs 
          *  into project root folder and define there a constant public string
          *  with the API key value asigned.
