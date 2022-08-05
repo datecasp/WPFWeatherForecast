@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFWeatherForecast.Models;
+using static WPFWeatherForecast.Models.FiveDaysModel;
 
 namespace WPFWeatherForecast
 {
@@ -29,7 +32,6 @@ namespace WPFWeatherForecast
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         /*
@@ -61,27 +63,25 @@ namespace WPFWeatherForecast
             {
                 try
                 {
-                    //Define method to connect to the API with async try-catch
-                    //URL http://api.openweathermap.org/data/2.5/forecast?q=london&appid= API ID HERE
-                    HttpClient client = new HttpClient();
-                    client.BaseAddress = new Uri("http://api.openweathermap.org/data/2.5/");
-                    client.DefaultRequestHeaders.Accept.Clear();
-                    var query = $"forecast?q={city}&appid=API ID HERE";
-                    var response = client.GetAsync(query).Result;
-                    var strResponse = response.Content.ReadAsStringAsync().Result;
-                    
-                    txtResponse.Text = strResponse;
-                    LayoutIntro.Visibility = Visibility.Hidden;
-                    GridForecast.Visibility = Visibility.Visible;
+                    /*
+                     *  FiveDaysModels Root is the class to hold as object the JSON response 
+                     *  HttpConnection(city) manages connection to API and returns the answer 
+                     *  JSON object into a string for deserialize and create a Root object that
+                     *  let us use the values received in the JSON answer
+                     */
+
+                    //Deserialize into a Root Object
+                    Root weatherForecast = JsonSerializer.Deserialize<Root>(HttpConnection.HttpConecction(city))!;
+                    //Add DataContext for Binding the data to the TextBlock´s Text Property
+                    DataContext = weatherForecast;
+                    //Shows Grid for forecast Layout
+                    LayoutGridForecast.Visibility = Visibility.Visible;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    txtResponse.Text = ex.Message;
+                    MessageBox.Show("Type a correct city name please.");
                 }
             }
-        }
-
-
-        
+        }        
     }
 }

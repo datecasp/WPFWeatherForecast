@@ -12,23 +12,39 @@
             <Button x:Name="btnIntro" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0" FontSize="14" FontWeight="Bold" Background="{x:Null}" Click="BtnIntro_Click">Click for forecast
             </Button>
         </StackPanel>
-        <StackPanel x:Name="LayoutForecast" Width="500" Height="400" Visibility="Visible">
+        <StackPanel x:Name="LayoutForecast" Width="500" Height="400" Visibility="Hidden">
             <TextBlock x:Name="txtCity" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0">Type in the city to get the forecast</TextBlock>
             <TextBox x:Name="boxCity" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Width="150" Margin="0,15,0,0"></TextBox>
             <Button x:Name="btnCity" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,0" FontSize="14" FontWeight="Bold" Background="{x:Null}" Click="BtnCity_Click">Click for forecast
             </Button>
-            <StackPanel x:Name="GridForecast" Visibility="Hidden">
+            <StackPanel x:Name="LayoutGridForecast" Visibility="Hidden">
                 <TextBlock x:Name="txtForecast" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0">Forecast for</TextBlock>
-                <TextBlock x:Name="txtForecastCity" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
-                <TextBlock x:Name="txtResponse" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
-                <Grid>
+                <TextBlock x:Name="txtForecastCity" Text ="{Binding city.name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                <Grid x:Name="grdForecast">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                </Grid>
+                    <TextBlock x:Name="txtDay" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0">Day</TextBlock>
+                    <TextBlock x:Name="txtTemp" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0">Temperature</TextBlock>
+                    <TextBlock x:Name="txtSky" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0">Sky</TextBlock>
+                    <TextBlock x:Name="txtDay1" Grid.Column="0" Grid.Row="1" Text ="{Binding list[0].dt_txt}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                    <TextBlock x:Name="txtTemp1" Grid.Column="1" Grid.Row="1" Text ="{Binding list[0].main.temp}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                    <TextBlock x:Name="txtSky1" Grid.Column="2" Grid.Row="1" Text ="{Binding list[0].weather[0].main}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                    <TextBlock x:Name="txtDay2" Grid.Column="0" Grid.Row="2" Text ="{Binding list[8].dt_txt}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                    <TextBlock x:Name="txtTemp2" Grid.Column="1" Grid.Row="2" Text ="{Binding list[8].main.temp}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                    <TextBlock x:Name="txtSky2" Grid.Column="2" Grid.Row="2" Text ="{Binding list[8].weather[0].main}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                    <TextBlock x:Name="txtDay3" Grid.Column="0" Grid.Row="3" Text ="{Binding list[16].dt_txt}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                    <TextBlock x:Name="txtTemp3" Grid.Column="1" Grid.Row="3" Text ="{Binding list[16].main.temp}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                    <TextBlock x:Name="txtSky3" Grid.Column="2" Grid.Row="3" Text ="{Binding list[16].weather[0].main}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                 </Grid>   
             </StackPanel>
         </StackPanel>
     </Grid>
