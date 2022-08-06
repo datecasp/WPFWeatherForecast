@@ -6,18 +6,18 @@
         xmlns:local="clr-namespace:WPFWeatherForecast"
         mc:Ignorable="d"
         Title="Weather Forecast" Height="650" Width="800">
-    <Grid x:Name="LayoutRoot"  Width="600" Height="800" >
-        <StackPanel x:Name="LayoutIntro" Visibility="Visible" VerticalAlignment="Center" Margin="0,0,0,200">
-            <Image x:Name="LogoIntro" Width="500" Source="C:\Users\Danny\Desktop\Programación\WPFWeatherForecast\Assets\LogoIntro.png"/>
-            <Button x:Name="btnIntro" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0" FontSize="14" FontWeight="Bold" Background="{x:Null}" Click="BtnIntro_Click">Click for forecast
+    <Grid x:Name="LayoutRoot"  Width="800" Height="650" >
+        <StackPanel x:Name="LayoutIntro" Visibility="Visible" VerticalAlignment="Center">
+            <Image x:Name="LogoIntro" Width="500" VerticalAlignment="Center" Source="C:\Users\Danny\Desktop\Programación\WPFWeatherForecast\Assets\LogoIntro.png"/>
+            <Button x:Name="btnIntro" Padding="5" HorizontalAlignment="Center"  Margin="0,10,0,0" FontSize="14" FontWeight="Bold" Background="{x:Null}" Click="BtnIntro_Click">Click for forecast
             </Button>
         </StackPanel>
-        <StackPanel x:Name="LayoutForecast" Width="600" Height="700" Visibility="Hidden" VerticalAlignment="Center">
-            <TextBlock x:Name="txtCity" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0">Type in the city to get the forecast</TextBlock>
+        <StackPanel x:Name="LayoutForecast" Width="800" Height="600" Background="Azure" Visibility="Hidden" VerticalAlignment="Top" >
+            <TextBlock x:Name="txtCity" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,55,0,0">Type in the city to get the forecast</TextBlock>
             <TextBox x:Name="boxCity" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Width="150" Margin="0,15,0,0"></TextBox>
             <Button x:Name="btnCity" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,0" FontSize="14" FontWeight="Bold" Background="{x:Null}" Click="BtnCity_Click">Click for forecast
             </Button>
-            <StackPanel x:Name="LayoutGridForecast" Visibility="Hidden">
+            <StackPanel x:Name="LayoutGridForecast" Visibility="Hidden" Width="800" Height="450" Background="White" Margin="0,25,0,0">
                 <TextBlock x:Name="txtForecast" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="0,15,0,0">Forecast for</TextBlock>
                 <TextBlock x:Name="txtForecastCity" Text ="{Binding city.name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="30"></TextBlock>
                 <Grid x:Name="grdForecast">
