@@ -137,8 +137,8 @@ namespace WPFWeatherForecast
                     }
                     return icon;
                 default:
-                    BitmapImage icon2 = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/atmosphere.png"));
-                    return icon2;
+                    icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/atmosphere.png"));
+                    return icon;
             }
         }
     }
