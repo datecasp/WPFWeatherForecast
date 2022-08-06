@@ -1,4 +1,4 @@
-﻿V2.0.0 WIP
+﻿v2.0.0 WIP
 
 This repo shows how to connect an API from a WPF desktop app.
 
