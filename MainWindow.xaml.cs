@@ -74,8 +74,16 @@ namespace WPFWeatherForecast
                     Root weatherForecast = JsonSerializer.Deserialize<Root>(HttpConnection.HttpConecction(city))!;
                     //Add DataContext for Binding the data to the TextBlock´s Text Property
                     DataContext = weatherForecast;
+
+                    //Assign icons to image cell grid
+                    imgSky10.Source = IconSelector(weatherForecast.list[0].weather[0].main, weatherForecast.list[0].weather[0].description);
+                    imgSky20.Source = IconSelector(weatherForecast.list[8].weather[0].main, weatherForecast.list[8].weather[0].description);
+                    imgSky30.Source = IconSelector(weatherForecast.list[16].weather[0].main, weatherForecast.list[16].weather[0].description);
+
                     //Shows Grid for forecast Layout
                     LayoutGridForecast.Visibility = Visibility.Visible;
+
+                    
                 }
                 catch (Exception ex)
                 {
@@ -83,5 +91,55 @@ namespace WPFWeatherForecast
                 }
             }
         }        
+
+        /*
+         * IconSelector checks weather[0].main value and selects 
+         * the correct icon to display.
+         * For some weather[0].main definitions there are several
+         * icons avaliable based in weather[0].description
+         * These options are based in openweathermap.org icons
+         */
+        private BitmapImage IconSelector(string weatherMain, string weatherDescription)
+        {
+            BitmapImage icon = null;
+            switch (weatherMain)
+            {
+                case "Clouds":
+                    if ((weatherDescription.Equals("few clouds")) || (weatherDescription.Equals("scattered clouds")))
+                    {
+                        icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/cloudy.png"));
+                    }
+                    else
+                    {
+                        icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/overcast.png"));
+                    }
+                    return icon;
+                case "Snow":
+                    icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/snow.png"));
+                    return icon;
+                case "Clear":
+                    icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/sunny.png"));
+                    return icon;
+                case "Drizzle":
+                    icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/lightrain.png"));
+                    return icon;
+                case "Thunderstorm":
+                    icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/thunderstorm.png"));
+                    return icon;
+                case "Rain":
+                    if (weatherDescription.Equals("light rain"))
+                    {
+                        icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/lightrain.png"));
+                    }
+                    else
+                    {
+                        icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/rain.png"));
+                    }
+                    return icon;
+                default:
+                    BitmapImage icon2 = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/atmosphere.png"));
+                    return icon2;
+            }
+        }
     }
 }
