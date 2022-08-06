@@ -1,4 +1,6 @@
-﻿This repo shows how to connect an API from a WPF desktop app.
+﻿V2.0.0 WIP
+
+This repo shows how to connect an API from a WPF desktop app.
 
 It´s developed in Visual Studio 2022 with C#.
 
