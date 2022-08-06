@@ -9,7 +9,7 @@
     <Grid x:Name="LayoutRoot"  Width="800" Height="650" >
         <StackPanel x:Name="LayoutIntro" Visibility="Visible" VerticalAlignment="Center">
             <Image x:Name="LogoIntro" Width="500" VerticalAlignment="Center" Source="C:\Users\Danny\Desktop\Programación\WPFWeatherForecast\Assets\LogoIntro.png"/>
-            <Button x:Name="btnIntro" Padding="5" HorizontalAlignment="Center"  Margin="0,10,0,0" FontSize="14" FontWeight="Bold" Background="{x:Null}" Click="BtnIntro_Click">Click for forecast
+            <Button x:Name="btnIntro" Padding="15" HorizontalAlignment="Center"  Margin="0,10,0,0" FontSize="14" FontWeight="Bold" Background="{x:Null}" Click="BtnIntro_Click">Click for forecast
             </Button>
         </StackPanel>
         <StackPanel x:Name="LayoutForecast" Width="800" Height="600" Background="Azure" Visibility="Hidden" VerticalAlignment="Top" >
