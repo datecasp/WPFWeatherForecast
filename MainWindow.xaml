@@ -49,7 +49,7 @@
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock x:Name="txtTemp10" Text ="{Binding list[0].main.temp}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Margin="0,15,0,0"></TextBlock>
+                        <TextBlock x:Name="txtTemp10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Margin="0,15,0,0"></TextBlock>
                         <TextBlock x:Name="txtTemp11" Text =" ºC" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"/>
                     </StackPanel>
                     <Image x:Name="imgSky10" Width="80" Height="80" Grid.Column="2" Grid.Row="1"></Image>
@@ -67,7 +67,7 @@
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock x:Name="txtTemp20" Text ="{Binding list[8].main.temp}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Margin="0,15,0,0"></TextBlock>
+                        <TextBlock x:Name="txtTemp20" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Margin="0,15,0,0"></TextBlock>
                         <TextBlock x:Name="txtTemp21" Text =" ºC" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"/>
                     </StackPanel>
                     <Image x:Name="imgSky20" Width="80" Height="80" Grid.Column="2" Grid.Row="2"></Image>
@@ -85,7 +85,7 @@
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock x:Name="txtTemp30" Text ="{Binding list[16].main.temp}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Margin="0,15,0,0"></TextBlock>
+                        <TextBlock x:Name="txtTemp30" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Margin="0,15,0,0"></TextBlock>
                         <TextBlock x:Name="txtTemp31" Text =" ºC" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"/>
                     </StackPanel>
                     <Image x:Name="imgSky30" Width="80" Height="80" Grid.Column="2" Grid.Row="3"></Image>
