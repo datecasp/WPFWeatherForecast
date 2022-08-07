@@ -78,6 +78,7 @@ namespace WPFWeatherForecast
                     //Make some data format
                     IconFiller(weatherForecast);                        
                     FillDayData(weatherForecast);
+                    TempToInt(weatherForecast);
                    
                     //Shows Grid for forecast Layout
                     LayoutGridForecast.Visibility = Visibility.Visible;
@@ -179,5 +180,16 @@ namespace WPFWeatherForecast
             imgSky20.Source = IconSelector(wf.list[8].weather[0].main, wf.list[8].weather[0].description);
             imgSky30.Source = IconSelector(wf.list[16].weather[0].main, wf.list[16].weather[0].description);
         }
+
+        /*
+     * Function to cast temp to int and show the data in the grid
+     */
+        private void TempToInt(Root wf)
+        {
+            txtTemp10.Text = ((int)(wf.list[0].main.temp)).ToString();
+            txtTemp20.Text = ((int)(wf.list[8].main.temp)).ToString();
+            txtTemp30.Text = ((int)(wf.list[16].main.temp)).ToString();
+        }
     }
+
 }
