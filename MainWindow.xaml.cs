@@ -75,14 +75,13 @@ namespace WPFWeatherForecast
                     //Add DataContext for Binding the data to the TextBlock´s Text Property
                     DataContext = weatherForecast;
 
-                    //Assign icons to image cell grid
-                    imgSky10.Source = IconSelector(weatherForecast.list[0].weather[0].main, weatherForecast.list[0].weather[0].description);
-                    imgSky20.Source = IconSelector(weatherForecast.list[8].weather[0].main, weatherForecast.list[8].weather[0].description);
-                    imgSky30.Source = IconSelector(weatherForecast.list[16].weather[0].main, weatherForecast.list[16].weather[0].description);
-
+                    //Make some data format
+                    IconFiller(weatherForecast);                        
+                    FillDayData(weatherForecast);
+                   
                     //Shows Grid for forecast Layout
                     LayoutGridForecast.Visibility = Visibility.Visible;
-
+                    
                     
                 }
                 catch (Exception ex)
@@ -140,6 +139,45 @@ namespace WPFWeatherForecast
                     icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/atmosphere.png"));
                     return icon;
             }
+        }
+
+        /*
+         * Function to fill the day grid cells with info about 
+         * the forecasted days
+         * day, day of week, month and year
+         */
+        private void FillDayData(Root wf)
+        {
+            List<string> dayFormated1 = DataFormat.DayOfWeek(wf.list[0].dt_txt);
+
+            txtDayDay1.Text = dayFormated1[1];
+            txtWeekDay1.Text = dayFormated1[0];
+            txtMonthDay1.Text = dayFormated1[2];
+            txtYearDay1.Text = dayFormated1[3];
+
+            List<string> dayFormated2 = DataFormat.DayOfWeek(wf.list[8].dt_txt);
+
+            txtDayDay2.Text = dayFormated2[1];
+            txtWeekDay2.Text = dayFormated2[0];
+            txtMonthDay2.Text = dayFormated2[2];
+            txtYearDay2.Text = dayFormated2[3];
+
+            List<string> dayFormated3 = DataFormat.DayOfWeek(wf.list[16].dt_txt);
+
+            txtDayDay3.Text = dayFormated3[1];
+            txtWeekDay3.Text = dayFormated3[0];
+            txtMonthDay3.Text = dayFormated3[2];
+            txtYearDay3.Text = dayFormated3[3];
+        }
+
+        /*
+         * Function to select and print the weather icon in the grid
+         */
+        private void IconFiller(Root wf)
+        {
+            imgSky10.Source = IconSelector(wf.list[0].weather[0].main, wf.list[0].weather[0].description);
+            imgSky20.Source = IconSelector(wf.list[8].weather[0].main, wf.list[8].weather[0].description);
+            imgSky30.Source = IconSelector(wf.list[16].weather[0].main, wf.list[16].weather[0].description);
         }
     }
 }

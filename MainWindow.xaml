@@ -36,38 +36,83 @@
                     <TextBlock x:Name="txtTemp" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="0,15,0,0">Temperature</TextBlock>
                     <TextBlock x:Name="txtSky" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="18" Margin="0,15,0,0">Sky</TextBlock>
                     <!--#region  Day 1-->
-                    <TextBlock x:Name="txtDay1" Grid.Column="0" Grid.Row="1" Text ="{Binding list[0].dt_txt}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                    <Grid x:Name="grdDay1" Grid.Column="0" Grid.Row="1" Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel x:Name="stkDay10">
+                            <TextBlock x:Name="txtWeekDay1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBlock x:Name="txtDayDay1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="24"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" x:Name="stkDay11" Margin="5,0,0,0">
+                            <TextBlock x:Name="txtMonthDay1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock x:Name="txtYearDay1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                        </StackPanel>
+                    </Grid>
                     <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock x:Name="txtTemp10" Text ="{Binding list[0].main.temp}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
                         <TextBlock x:Name="txtTemp11" Text =" ºC" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="2" Grid.Row="1">
                         <Image x:Name="imgSky10" Width="50" Height="50"></Image>
-                        <!--TextBlock x:Name="txtSky10"  Text ="{Binding list[0].weather[0].main}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock-->
                         <TextBlock x:Name="txtSky11"  Text ="{Binding list[0].weather[0].description}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                     <!--#endregion-->
                     <!--#region Day 2-->
-                    <TextBlock x:Name="txtDay2" Grid.Column="0" Grid.Row="2" Text ="{Binding list[8].dt_txt}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                    <Grid x:Name="grdDay2" Grid.Column="0" Grid.Row="2" Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel x:Name="stkDay20">
+                            <TextBlock x:Name="txtWeekDay2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBlock x:Name="txtDayDay2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="24"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" x:Name="stkDay21" Margin="5,0,0,0">
+                            <TextBlock x:Name="txtMonthDay2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock x:Name="txtYearDay2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                        </StackPanel>
+                    </Grid>
                     <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock x:Name="txtTemp20" Text ="{Binding list[8].main.temp}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
                         <TextBlock x:Name="txtTemp21" Text =" ºC" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="2" Grid.Row="2">
                         <Image x:Name="imgSky20" Width="50" Height="50"></Image>
-                        <!--TextBlock x:Name="txtSky20"  Text ="{Binding list[8].weather[0].main}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock-->
                         <TextBlock x:Name="txtSky21"  Text ="{Binding list[8].weather[0].description}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                     <!--#endregion-->
                     <!--#region Day 3-->
-                    <TextBlock x:Name="txtDay3" Grid.Column="0" Grid.Row="3" Text ="{Binding list[16].dt_txt}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
+                    <Grid x:Name="grdDay3" Grid.Column="0" Grid.Row="3" Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackPanel x:Name="stkDay30">
+                            <TextBlock x:Name="txtWeekDay3" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14"/>
+                            <TextBlock x:Name="txtDayDay3" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="24"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" x:Name="stkDay31" Margin="5,0,0,0">
+                            <TextBlock x:Name="txtMonthDay3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+                            <TextBlock x:Name="txtYearDay3" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+                        </StackPanel>
+                    </Grid>
                     <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock x:Name="txtTemp30" Text ="{Binding list[16].main.temp}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock>
                         <TextBlock x:Name="txtTemp31" Text =" ºC" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="2" Grid.Row="3">
                         <Image x:Name="imgSky30" Width="50" Height="50"></Image>
-                        <!--TextBlock x:Name="txtSky30"  Text ="{Binding list[16].weather[0].main}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Margin="0,15,0,0"></TextBlock-->
                         <TextBlock x:Name="txtSky31"  Text ="{Binding list[16].weather[0].description}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"></TextBlock>
                     </StackPanel>
                     <!--#endregion-->
