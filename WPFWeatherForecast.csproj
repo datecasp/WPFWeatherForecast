@@ -12,8 +12,34 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\atmosphere.png" />
+    <None Remove="Assets\cloudy.png" />
+    <None Remove="Assets\lightrain.png" />
+    <None Remove="Assets\LogoIntro.png" />
+    <None Remove="Assets\overcast.png" />
+    <None Remove="Assets\rain.png" />
+    <None Remove="Assets\snow.png" />
+    <None Remove="Assets\sunny.png" />
+    <None Remove="Assets\thunderstorm.png" />
+    <None Remove="Assets\v2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1264.42" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\atmosphere.png" />
+    <Resource Include="Assets\cloudy.png" />
+    <Resource Include="Assets\lightrain.png" />
+    <Resource Include="Assets\LogoIntro.png" />
+    <Resource Include="Assets\overcast.png" />
+    <Resource Include="Assets\rain.png" />
+    <Resource Include="Assets\snow.png" />
+    <Resource Include="Assets\sunny.png" />
+    <Resource Include="Assets\thunderstorm.png" />
+    <Resource Include="Assets\v2.png" />
   </ItemGroup>
 
 </Project>

@@ -106,37 +106,37 @@ namespace WPFWeatherForecast
                 case "Clouds":
                     if ((weatherDescription.Equals("few clouds")) || (weatherDescription.Equals("scattered clouds")))
                     {
-                        icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/cloudy.png"));
+                        icon = new BitmapImage(new Uri("Assets/cloudy.png", UriKind.Relative));
                     }
                     else
                     {
-                        icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/overcast.png"));
+                        icon = new BitmapImage(new Uri("Assets/overcast.png", UriKind.Relative));
                     }
                     return icon;
                 case "Snow":
-                    icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/snow.png"));
+                    icon = new BitmapImage(new Uri("Assets/snow.png", UriKind.Relative));
                     return icon;
                 case "Clear":
-                    icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/sunny.png"));
+                    icon = new BitmapImage(new Uri("Assets/sunny.png", UriKind.Relative));
                     return icon;
                 case "Drizzle":
-                    icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/lightrain.png"));
+                    icon = new BitmapImage(new Uri("Assets/lightrain.png", UriKind.Relative));
                     return icon;
                 case "Thunderstorm":
-                    icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/thunderstorm.png"));
+                    icon = new BitmapImage(new Uri("Assets/thunderstorm.png", UriKind.Relative));
                     return icon;
                 case "Rain":
                     if (weatherDescription.Equals("light rain"))
                     {
-                        icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/lightrain.png"));
+                        icon = new BitmapImage(new Uri("Assets/lightrain.png", UriKind.Relative));
                     }
                     else
                     {
-                        icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/rain.png"));
+                        icon = new BitmapImage(new Uri("Assets/rain.png", UriKind.Relative));
                     }
                     return icon;
                 default:
-                    icon = new BitmapImage(new Uri("C:/Users/Danny/Desktop/Programación/WPFWeatherForecast/Assets/atmosphere.png"));
+                    icon = new BitmapImage(new Uri("Assets/atmosphere.png", UriKind.Relative));
                     return icon;
             }
         }

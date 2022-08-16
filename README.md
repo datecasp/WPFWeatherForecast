@@ -22,5 +22,3 @@ To show the data, I use a Grid with TextBlocks (defined in MainWindow.xaml). The
 
 is binded to the object created deserializing the JSON and mapped to concrete atributes.
 
-Obviously you must change all the paths to resources!!
-
