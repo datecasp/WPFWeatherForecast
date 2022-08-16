@@ -27,7 +27,6 @@ namespace WPFWeatherForecast
     public partial class MainWindow : Window
     {
         string city;
-        private static HttpClient Client = new HttpClient();
 
         public MainWindow()
         {
@@ -182,8 +181,8 @@ namespace WPFWeatherForecast
         }
 
         /*
-     * Function to cast temp to int and show the data in the grid
-     */
+        * Function to cast temp to int and show the data in the grid
+        */
         private void TempToInt(Root wf)
         {
             txtTemp10.Text = ((int)(wf.list[0].main.temp)).ToString();
